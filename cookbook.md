@@ -3,7 +3,7 @@ Codebook
 
 
 activity	 
-    ac tivity description	
+    activity description	
         values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
 subject	
