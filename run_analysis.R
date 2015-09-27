@@ -73,7 +73,7 @@ feature_means_by_act_subj <- by_act_subj %>% summarise_each(funs(mean))
 # -------------------------------------------------------------------------------------------
 # Save the results, aka "tidy" dataset
 # -------------------------------------------------------------------------------------------
-write.table(feature_means_by_act_subj, "har_data_by_act_subj.txt", row.name=FALSE)
+write.table(feature_means_by_act_subj, "means_by_act_subj.txt", row.name=FALSE)
 
 
 
