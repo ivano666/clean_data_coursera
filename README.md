@@ -70,10 +70,9 @@ The dataset we are working with can be obtained from here:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 ## Processing
-The run_analysis.R script processeses the data so that we can obtain the data we want to analyze.
+The run_analysis.R script contains code that will process the HAR dataset and transforms it into the dataset we need. The script will automatically download the file and unzip it in the same directory where the run_analysis.R script is located at, if required.
+Note: The script checks for the same filename given in the course site for download just to keep it simple.
 
-The run_analysis.R script goes thru the following:
-0. The script will automatically download the file and unzip it in the same directory where the run_analysis.R script is located at, if required.
 1. The data comes separated into train and test data files. We are interested in a single view of the data and therefore we need to combine them first. As part of this exercise we also load the feature descriptions so that we can provide a better description for our columns.
 2. We are only interested in features/measures that represent the mean and standard deviation (std). We now reduce the single data view we created in the previous step by selecting only those columns we are interested in. We purposedly left mean frequency out, because, at this moment, we are not interested in examining that ratio.
 3. Next, we replace the activity ids with more readable labels: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
