@@ -2,12 +2,12 @@
 # 0. Download the dataset, if required.
 # -------------------------------------------------------------------------------------------
 # Download data
-if (!file.exists("./dataset.zip")) {
+if (!file.exists("./getdata-projectfiles-UCI HAR Dataset.zip")) {
     fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-    download.file(fileURL,destfile = "./dataset.zip", method="curl")
+    download.file(fileURL,destfile = "./getdata-projectfiles-UCI HAR Dataset.zip", method="curl")
 }
 if (!file.exists("./UCI HAR Dataset")) {
-    unzip("./dataset.zip", exdir=".")
+    unzip("./getdata-projectfiles-UCI HAR Dataset.zip", exdir=".")
 }
 
 # -------------------------------------------------------------------------------------------
