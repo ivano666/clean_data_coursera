@@ -36,11 +36,12 @@ filtered_har_data <- har_data[,c(1, 2, mean_std_features$V1+2)]
 # 3. Use descriptive activity names to name the activities in the data set.
 # -------------------------------------------------------------------------------------------
 # Read activity labels
-activities <- read.table("./UCI HAR Dataset/activity_labels.txt", col.names = c("activity_id", "description"))
+activities <- read.table("./UCI HAR Dataset/activity_labels.txt", col.names = c("id", "activity"))
 # get descriptions
-activities_description <- merge(y_total, activities, by.x="activity_id", by.y="activity_id", sort=FALSE)
-# Replace activity number with activity description
-filtered_har_data$activity_id <- activities_description$description
+filtered_har_data <- merge(activities, filtered_har_data, by.x="id", by.y="activity_id", sort=FALSE)
+# remove the id column as we have the description already
+drop_cols <- "id"
+filtered_har_data <- filtered_har_data[, !(names(filtered_har_data) %in% drop_cols)]
 
 # -------------------------------------------------------------------------------------------
 # 4. Appropriately labels the data set with descriptive variable names.
@@ -66,5 +67,12 @@ colnames(filtered_har_data) <- c("activity", "subject", mean_std_features$V2)
 by_act_subj <- filtered_har_data %>% group_by(activity, subject)
 # Get the means
 feature_means_by_act_subj <- by_act_subj %>% summarise_each(funs(mean))
+
+
+# -------------------------------------------------------------------------------------------
+# Save the results, aka "tidy" dataset
+# -------------------------------------------------------------------------------------------
+write.table(feature_means_by_act_subj, "har_data_by_act_subj.txt", row.name=FALSE)
+
 
 
