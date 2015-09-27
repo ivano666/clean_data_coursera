@@ -2,10 +2,12 @@ Getting and Cleaning Data Course Project
 ---------------------------------------------------------------------------
 
 # Introduction
-The data set comes originally from the: Human Activity Recognition Using Smartphones Dataset, Version 1.0
+The data set comes originally from the: Human Activity Recognition (HAR) Using Smartphones Dataset, Version 1.0
 
-## Here is a description on how the data set was constructed:
+A full description is available at the site where the data was obtained: 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
+### Description of the HAR dataset
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
@@ -62,20 +64,33 @@ The following files are available for the train and test data. Their description
 Note: The complete list of variables of each feature vector is available in 'features.txt'
 
 # Data cleaning
-For this project we are only interested in the features related to standard deviation and mean. After selecting these features, we will then compute the mean on each of these features group by the activity and subject to give us an idea on what averages are. The following section details how we went about reducing the dataset in order to achieve our goals.
+For this project we are only interested in the features related to standard deviation and mean. After selecting these features, we will then compute the mean on each of them grouping by the activity and subject to give us an idea on what the averages are. The following section details how we went about reducing the dataset in order to achieve our goal.
+
+The dataset we are working with can be obtained from here:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 ## Processing
-The run_analysis.R file is the script that processes the data and puts it in the format we desire.
-These are the steps followed:
+The run_analysis.R script processeses the data so that we can obtain the data we want to analyze.
 
-1. The data comes separated into train and test data. We are interested in a single view of the data and therefore we need to combine them first. As part of this exercise we also load the feature descriptions so that we can provide a better description for our columns.
+The run_analysis.R script goes thru the following:
+0. The script will automatically download the file and unzip it in the same directory where the run_analysis.R script is located at, if required.
+1. The data comes separated into train and test data files. We are interested in a single view of the data and therefore we need to combine them first. As part of this exercise we also load the feature descriptions so that we can provide a better description for our columns.
 2. We are only interested in features/measures that represent the mean and standard deviation (std). We now reduce the single data view we created in the previous step by selecting only those columns we are interested in. We purposedly left mean frequency out, because, at this moment, we are not interested in examining that ratio.
 3. Next, we replace the activity ids with more readable labels: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 4. Now, we just need to provide more descriptive labels to our columns. We replace abbreviations such as Acc, Gyro, etc. with longer descriptions: Accelerator, Gyrometer, etc.
-5. Last, we compute the average of the features by activity and subject id. As part of this step we save the resulting data set into the file 'means_by_act_subj.txt'
+5. Last, we compute the average of the features by activity and subject id. As part of this step we save the resulting data set into the file 'means_by_act_subj.txt'. The measures/features are described in the codebook.md
 
 ### Files included:
-- 'means_by_act_subj.txt': has the "tidy" dataset
+- 'README.md': this readme
 - 'codebook.md': contains the information about the variables for the dataset
 - run_analysis.R: script that processes the original HAR dataset
 
+### Reading the "tidy" dataset
+The resulting data can be easily read using R after running the run_analysis.R script or using the following code snippet that will read it from the submission site and display it
+
+```{r}
+address <- "https://s3.amazonaws.com/coursera-uploads/user-30c935fc053618659828993a/975116/asst-3/d1bfbdd0653e11e5afaaefddacf17f73.txt"
+address <- sub("^https", "http", address)
+tidy_data <- read.table(url(address), header = TRUE) 
+View(tidy_data)
+````
