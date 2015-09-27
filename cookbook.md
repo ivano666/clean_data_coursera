@@ -2,9 +2,9 @@ Codebook
 ---------------------------------------------------------------------------
 
 
-activity
+activity 
     activity description
-       values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+        values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
 subject
     subject id
