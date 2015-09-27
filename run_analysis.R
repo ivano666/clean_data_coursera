@@ -1,4 +1,16 @@
 # -------------------------------------------------------------------------------------------
+# 0. Download the dataset, if required.
+# -------------------------------------------------------------------------------------------
+# Download data
+if (!file.exists("./dataset.zip")) {
+    fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+    download.file(fileURL,destfile = "./dataset.zip", method="curl")
+}
+if (!file.exists("./UCI HAR Dataset")) {
+    unzip("./dataset.zip", exdir=".")
+}
+
+# -------------------------------------------------------------------------------------------
 # 1. Merge the training and the test sets to create one data set
 # -------------------------------------------------------------------------------------------
 # Read train data
@@ -39,7 +51,7 @@ filtered_har_data <- har_data[,c(1, 2, mean_std_features$V1+2)]
 activities <- read.table("./UCI HAR Dataset/activity_labels.txt", col.names = c("id", "activity"))
 # get descriptions
 filtered_har_data <- merge(activities, filtered_har_data, by.x="id", by.y="activity_id", sort=FALSE)
-# remove the id column as we have the description already
+# remove the id column as we have the descriptions already
 drop_cols <- "id"
 filtered_har_data <- filtered_har_data[, !(names(filtered_har_data) %in% drop_cols)]
 
