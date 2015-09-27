@@ -6,8 +6,8 @@ activity
     activity description	
         values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
-subject	
-    subject id	
+subject		
+    subject id		
         values: 1 thru 30
 
 
