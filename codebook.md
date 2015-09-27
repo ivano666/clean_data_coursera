@@ -103,10 +103,10 @@ Codebook
 **time-body-gyrometer-jerk-std-Z**	
 	standard deviation for the time measure for body angular acceleration jerk on the Y dimension	 
 
-**time-body-accelerometer-magnitude-mean	
+**time-body-accelerometer-magnitude-mean**	
 	mean for the time measure for body acceleration magnitude	 
 
-**time-body-accelerometer-magnitude-std**
+**time-body-accelerometer-magnitude-std**	
 	standard deviation for the time measure for body acceleration magnitude	 
 
 **time-gravity-accelerometer-magnitude-mean**	
@@ -142,22 +142,22 @@ Codebook
 **frequency-body-accelerometer-mean-Z**	
 	mean for the frequency measure for body acceleration on the Z dimension	 
 
-**frequency-body-accelerometer-std-X	
+**frequency-body-accelerometer-std-X**	
 	standard deviation for the frequency measure for body acceleration on the X dimension	 
 
-**frequency-body-accelerometer-std-Y	
+**frequency-body-accelerometer-std-Y**	
 	standard deviation for the frequency measure for body acceleration on the Y dimension	 
 
-**frequency-body-accelerometer-std-Z	
+**frequency-body-accelerometer-std-Z**		
 	standard deviation for the frequency measure for body acceleration on the Y dimension	 
 
-**frequency-body-accelerometer-jerk-mean-X	
+**frequency-body-accelerometer-jerk-mean-X**		
 	mean for the frequency measure for body acceleration jerk  on the X dimension	 
 
-**frequency-body-accelerometer-jerk-mean-Y	
+**frequency-body-accelerometer-jerk-mean-Y**		
 	mean for the frequency measure for body acceleration jerk on the Y dimension	 
 
-**frequency-body-accelerometer-jerk-mean-Z	
+**frequency-body-accelerometer-jerk-mean-Z**	
 	mean for the frequency measure for body acceleration jerk on the Z dimension	 
 
 **frequency-body-accelerometer-jerk-std-X**	
