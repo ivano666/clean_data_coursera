@@ -49,16 +49,16 @@ Codebook
 **time-gravity-accelerometer-std-Z**	
 	standard deviation for the time measure for gravity acceleration on the Y dimension	 
 
-**time-body-accelerometer-jerk-mean-X**	
+**time-body-accelerometer-jerk-mean-X**		
 	mean for the time measure for body acceleration jerk  on the X dimension	 
 
-**time-body-accelerometer-jerk-mean-Y**	
+**time-body-accelerometer-jerk-mean-Y**		
 	mean for the time measure for body acceleration jerk on the Y dimension	 
 
-**time-body-accelerometer-jerk-mean-Z**	
+**time-body-accelerometer-jerk-mean-Z**		
 	mean for the time measure for body acceleration jerk on the Z dimension	 
 
-**time-body-accelerometer-jerk-std-X**	
+**time-body-accelerometer-jerk-std-X**		
 	standard deviation for the time measure for body acceleration jerk on the X dimension	 
 
 **time-body-accelerometer-jerk-std-Y**	
@@ -184,13 +184,13 @@ Codebook
 **frequency-body-gyrometer-std-Y**	
 	standard deviation for the frequency measure for body angular acceleration on the Y dimension	 
 
-**frequency-body-gyrometer-std-Z**	
+**frequency-body-gyrometer-std-Z**		
 	standard deviation for the frequency measure for body angular acceleration on the Y dimension	 
 
-**frequency-body-accelerometer-magnitude-mean**	
+**frequency-body-accelerometer-magnitude-mean**		
 	mean for the frequency measure for body acceleration magnitude	 
 
-**frequency-body-accelerometer-magnitude-std**	
+**frequency-body-accelerometer-magnitude-std**		
 	standard deviation for the frequency measure for body acceleration magnitude	 
 
 **frequency-body-body-accelerometer-jerk-magnitude-mean**	
@@ -202,10 +202,10 @@ Codebook
 **frequency-body-body-gyrometer-magnitude-mean**	
 	mean for the frequency measure for body angular acceleration magnitude	 
 
-**frequency-body-body-gyrometer-magnitude-std**	
+**frequency-body-body-gyrometer-magnitude-std**		
 	standard deviation for the frequency measure for body angular acceleration magnitude	 
 
-**frequency-body-body-gyrometer-jerk-magnitude-mean**	
+**frequency-body-body-gyrometer-jerk-magnitude-mean**		
 	mean for the frequency measure for body angular acceleration jerk magnitude	 
 
 **frequency-body-body-gyrometer-jerk-magnitude-std**	
