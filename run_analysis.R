@@ -48,10 +48,11 @@ filtered_har_data <- filtered_har_data[, !(names(filtered_har_data) %in% drop_co
 # -------------------------------------------------------------------------------------------
 # Set descriptive variable names
 mean_std_features$V2 <- gsub("Gyro", "-gyrometer", mean_std_features$V2)
-mean_std_features$V2 <- gsub("Mag", "-magnitud", mean_std_features$V2)
+mean_std_features$V2 <- gsub("Mag", "-magnitude", mean_std_features$V2)
 mean_std_features$V2 <- gsub("Acc", "-accelerometer", mean_std_features$V2)
 mean_std_features$V2 <- gsub("Jerk", "-jerk", mean_std_features$V2)
 mean_std_features$V2 <- gsub("Body", "-body", mean_std_features$V2)
+mean_std_features$V2 <- gsub("Gravity", "-gravity", mean_std_features$V2)
 mean_std_features$V2 <- gsub("t-", "time-", mean_std_features$V2)
 mean_std_features$V2 <- gsub("f-", "frequency-", mean_std_features$V2)
 
